@@ -1,0 +1,423 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学習用ページ</title>
+  <style>
+  /* PDFコンテナ */
+.pdf-container {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+/* 講義本体 */
+.lecture {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 見出し */
+.lecture h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333;
+}
+
+.lecture h2 {
+  font-size: 1.5em;
+  margin: 40px 0 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+.lecture h3 {
+  font-size: 1.2em;
+  margin: 20px 0 10px;
+  font-weight: bold;
+}
+
+/* オーバービュー */
+.lecture-overview {
+  background: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 4px;
+}
+
+.lecture-overview p {
+  margin: 0;
+}
+
+/* セクション */
+.lecture-section {
+  margin-bottom: 40px;
+}
+
+.lecture-section .content {
+  margin-top: 20px;
+}
+
+/* リスト */
+.ordered-list, .unordered-list {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.ordered-list li, .unordered-list li {
+  margin-bottom: 10px;
+}
+
+.list-title-ordered, .list-title-unordered {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 用語の強調 */
+.term {
+  font-weight: bold;
+  color: #c00;
+}
+
+/* 練習問題セクション */
+.practice {
+  background: #eef7fc;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 4px;
+}
+
+.practice h3 {
+  margin-top: 0;
+}
+
+/* プロンプトコンテナ */
+.prompt-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.prompt-title {
+  font-weight: bold;
+}
+
+.copy-button {
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+}
+
+.copy-button:hover {
+  background: #ddd;
+}
+
+.copy-icon {
+  margin-right: 5px;
+}
+
+.prompt-content {
+  padding: 10px;
+  background: #f7f7f7;
+  font-size: 0.9em;
+  overflow: auto;
+}
+
+/* アコーディオン */
+.accordion {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.accordion-toggle {
+  width: 100%;
+  text-align: left;
+  background: #f5f5f5;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.accordion-toggle:hover {
+  background: #eee;
+}
+
+.accordion-content {
+  display: none;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+
+.accordion-content .answer {
+  margin-top: 10px;
+}
+
+.accordion-content h4 {
+  margin-top: 0;
+}
+
+/* 用語説明 */
+.terminology dl {
+  margin-top: 20px;
+}
+
+.terminology dt {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.terminology dd {
+  margin-left: 20px;
+}
+
+/* まとめセクション */
+.lecture-summary {
+  margin-bottom: 40px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.lecture-summary p {
+  margin-top: 0;
+}
+
+/* レスポンシブ調整 */
+@media screen and (max-width: 600px) {
+  .pdf-container iframe {
+    height: 300px;
+  }
+
+  .lecture, .pdf-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .prompt-content {
+    font-size: 0.8em;
+  }
+}
+
+  </style>
+</head>
+
+
+<div class="pdf-container">
+  <iframe src="https://drive.google.com/file/d/1doDGPQ_PBUGG65XjcC9A0TVSGHtIKC7a/preview" allowfullscreen></iframe>
+</div>
+
+<article class="lecture">
+  <h1>Difyで作るリード獲得システム</h1>
+  
+  <div class="lecture-overview">
+    <p>この講義では、Difyを活用して効果的なリード獲得システムを構築する方法を学びます。<br>自動応答の仕組みづくりから、実践的な運用方法まで、具体的な手順とともに解説していきます。</p>
+  </div>
+
+  <section class="lecture-section">
+    <h2>リード獲得の基本設計</h2>
+    <div class="content">
+      <p>皆さん、リード獲得に苦労した経験はありませんか？<br>優良な見込み客を見つけ出し、効率的にアプローチすることは、マーケティングの永遠の課題と言えます。<br>でも、Difyを使えば、この課題を効果的に解決できるんです。</p>
+
+      <h3>リード獲得システムの全体像</h3>
+      <p>まずは、Difyを使ったリード獲得システムの基本的な構造を理解しましょう。<br>このシステムは、以下の3つの要素で構成されています：</p>
+
+      <ol class="ordered-list">
+        <h3 class="list-title-ordered">システムの3つの構成要素</h3>
+        <li><p>エントリーポイント：ウェブサイトやSNSなど、顧客との最初の接点となる場所</p></li>
+        <li><p>対話エンジン：Difyが提供するAI対話システム</p></li>
+        <li><p>データ収集・分析：顧客との対話から得られる情報の収集と分析の仕組み</p></li>
+      </ol>
+
+      <h3>リード獲得の戦略設計</h3>
+      <p>効果的なリード獲得には、明確な戦略が必要です。<br>Difyを使う際の重要なポイントを見ていきましょう：</p>
+
+      <ul class="unordered-list">
+        <h3 class="list-title-unordered">戦略設計の4つのポイント</h3>
+        <li><p>ターゲット設定：理想的な顧客像（ペルソナ）を明確に定義する</p></li>
+        <li><p>価値提案：顧客の課題解決に焦点を当てた対話シナリオの作成</p></li>
+        <li><p>スコアリング：リードの質を評価する基準の設定</p></li>
+        <li><p>フォローアップ：獲得したリードへの継続的なアプローチ方法の確立</p></li>
+      </ul>
+
+      <p>特に重要なのが、<span class="term">リードスコアリング</span>の設計です。<br>Difyでは、対話の内容や行動パターンから、自動的にリードの質を評価することができます。</p>
+    </div>
+  </section>
+
+  <section class="lecture-section">
+    <h2>自動応答の仕組み作り</h2>
+    <div class="content">
+      <p>では、具体的にDifyで自動応答システムを構築していきましょう。<br>ここがこの講義の核心部分です。</p>
+
+      <h3>対話シナリオの設計</h3>
+      <p>効果的な対話シナリオには、以下の要素が必要です：</p>
+
+      <ol class="ordered-list">
+        <h3 class="list-title-ordered">対話シナリオの基本要素</h3>
+        <li><p>開始トリガー：顧客との対話を始めるきっかけとなる条件設定</p></li>
+        <li><p>質問フロー：顧客の興味や課題を引き出すための質問の流れ</p></li>
+        <li><p>価値提案：顧客のニーズに応じた解決策の提示</p></li>
+        <li><p>アクション誘導：具体的な次のステップへの案内</p></li>
+      </ol>
+
+      <h3>Difyでの実装手順</h3>
+      <p>実際の実装は、以下の手順で進めていきます：</p>
+
+      <ul class="unordered-list">
+        <h3 class="list-title-unordered">実装ステップ</h3>
+        <li><p>プロンプトテンプレートの作成：基本的な応答パターンを設定</p></li>
+        <li><p>条件分岐の設定：顧客の反応に応じた対話の分岐を定義</p></li>
+        <li><p>データ収集ポイントの設定：重要な情報を収集するタイミングを決定</p></li>
+        <li><p>エラーハンドリング：想定外の応答への対処方法を準備</p></li>
+      </ul>
+
+      <p>ここで重要なのが、<span class="term">コンバージョンポイント</span>の設定です。<br>単なる会話で終わらせず、具体的なアクションにつながる流れを作ることが大切です。</p>
+
+      <h3>パーソナライゼーションの実装</h3>
+      <p>Difyの強みを活かした、個別化された対応を実現しましょう。<br>顧客との対話履歴や行動データを基に、次のようなパーソナライズを行います：</p>
+
+      <ul class="unordered-list">
+        <h3 class="list-title-unordered">パーソナライズのポイント</h3>
+        <li><p>業界特有の言葉遣いの調整</p></li>
+        <li><p>過去の対話履歴を踏まえた応答</p></li>
+        <li><p>顧客の関心事に基づいた情報提供</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="practice">
+    <h2>練習問題: 初めてのリード獲得ボットを作ろう！</h2>
+    <div class="content">
+      <h3>問題文</h3>
+      <p>あなたの会社の製品やサービスを想定して、基本的なリード獲得ボットを作成してみましょう。<br>以下の要素を含む対話シナリオを設計してください：</p>
+      <ol>
+        <li>初期の挨拶と用件の確認</li>
+        <li>顧客の課題を引き出す質問フロー</li>
+        <li>解決策の提案と次のステップへの誘導</li>
+      </ol>
+
+      <h3>補助プロンプト</h3>
+      <p class="prompt-instruction">以下の補助プロンプトを使用して、AIと一緒に練習問題に取り組むことができます。</p>
+      
+      <div class="prompt-container">
+        <div class="prompt-header">
+          <span class="prompt-title">補助プロンプト</span>
+          <button class="copy-button" onclick="copyPrompt(this)" data-prompt-target="prompt-1">
+            <span class="copy-icon">📋</span>
+            <span class="copy-text">コピー</span>
+          </button>
+        </div>
+        <pre class="prompt-content" id="prompt-1"><code>あなたは私のリード獲得ボット設計アドバイザーです。
+以下の情報を元に、効果的な対話シナリオを提案してください：
+
+会社/製品情報：
+[あなたの会社や製品の概要を記入]
+
+ターゲット顧客：
+[想定する顧客層の特徴を記入]
+
+主な課題/ニーズ：
+[顧客が抱える主な課題やニーズを記入]
+
+期待する成果：
+[ボットを通じて達成したい目標を記入]
+
+以下の要素を含むシナリオを作成してください：
+1. 開始時の挨拶文
+2. 主要な質問項目（3-5個）
+3. 提案/解決策の提示方法
+4. 次のステップへの誘導文
+
+また、以下の点についても具体的なアドバイスをお願いします：
+- 対話の自然な流れを作るためのコツ
+- 効果的な質問の仕方
+- リードの質を判断するためのポイント</code></pre>
+      </div>
+      
+      <h3>解答/解答例</h3>
+      <div class="accordion">
+        <button class="accordion-toggle">解答/解答例を表示</button>
+        <div class="accordion-content">
+          <div class="answer">
+            <h4>基本的な対話シナリオ例</h4>
+            <p>以下は、ITサービス企業を想定した対話シナリオの例です：</p>
+
+            <h4>1. 初期設定</h4>
+            <p>挨拶：<br>
+            "こんにちは！私は[会社名]のAIアシスタントです。<br>
+            業務効率化についてお悩みでしょうか？<br>
+            お客様に最適なソリューションをご提案させていただきます。"</p>
+
+            <h4>2. 質問フロー</h4>
+            <p>主要な質問項目：</p>
+            <ul>
+              <li>現在抱えている業務上の課題は何ですか？</li>
+              <li>どのような業務の効率化をお考えですか？</li>
+              <li>導入予定の時期や予算感について教えていただけますか？</li>
+            </ul>
+
+            <h4>3. 提案フェーズ</h4>
+            <p>回答内容に基づいた提案：<br>
+            "ご回答ありがとうございます。<br>
+            お客様の状況を踏まえると、[具体的なソリューション名]が最適かと思われます。<br>
+            以下の特徴が、お客様の課題解決に役立つと考えています：
+            [具体的な機能や特徴の列挙]"</p>
+
+            <h4>4. 次のステップへの誘導</h4>
+            <p>アクション提案：<br>
+            "より詳しい内容について、弊社の専門スタッフがご説明させていただけますが、無料相談をご案内させていただいてもよろしいでしょうか？"</p>
+
+            <p>このシナリオは基本形であり、実際の運用では顧客の反応に応じて柔軟に調整することが重要です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="terminology">
+    <h2>用語説明</h2>
+    <dl>
+      <dt>リードスコアリング</dt>
+      <dd><p>見込み客の購買可能性を数値化して評価する手法。行動や対話内容などから、商談化の可能性を判断します。</p></dd>
+      <dt>コンバージョンポイント</dt>
+      <dd><p>見込み客が具体的なアクション（資料請求や問い合わせなど）を起こす地点。リード獲得において重要な指標となります。</p></dd>
+    </dl>
+  </section>
+
+  <section class="lecture-summary">
+    <h2>まとめと次のステップ</h2>
+    <p>この講義では、Difyを使ったリード獲得システムの構築方法について、基本設計から具体的な実装手順まで学びました。<br>特に、対話シナリオの設計とパーソナライゼーションの重要性について理解を深めることができました。</p>
+    <p>次の講義では、獲得したリードデータの分析方法と、より効果的な顧客理解の手法について学んでいきます。<br>データ分析を通じて、さらに質の高いリード獲得を目指しましょう。</p>
+  </section>
+</article>
+

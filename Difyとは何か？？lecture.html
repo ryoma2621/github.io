@@ -1,0 +1,432 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学習用ページ</title>
+  <style>
+    /* 全体のベーススタイル */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+/* レイアウト調整 */
+article.lecture {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* タイトルや見出し */
+h1, h2, h3, h4 {
+  margin: 1.2em 0 0.6em;
+  font-weight: bold;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #007ACC;
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #007ACC;
+}
+
+h3 {
+  font-size: 1.2em;
+  border-left: 4px solid #007ACC;
+  padding-left: 0.5em;
+  margin-top: 1.5em;
+}
+
+/* テキスト要素 */
+p {
+  margin: 1em 0;
+}
+
+/* 用語など強調箇所 */
+.term {
+  font-weight: bold;
+  color: #007ACC;
+}
+
+/* PDFコンテナ */
+.pdf-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* 概要 */
+.lecture-overview {
+  background: #007ACC;
+  color: #fff;
+  padding: 1em;
+  border-radius: 4px;
+  margin-bottom: 2em;
+}
+
+.lecture-overview p {
+  margin: 0;
+}
+
+/* セクション */
+.lecture-section {
+  margin-bottom: 2em;
+}
+
+.lecture-section .content {
+  background: #fafafa;
+  padding: 1em;
+  border-left: 4px solid #007ACC;
+  border-radius: 4px;
+}
+
+/* リスト */
+.ordered-list,
+.unordered-list {
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+.ordered-list li,
+.unordered-list li {
+  margin: 0.8em 0;
+  list-style-position: outside;
+}
+
+.list-title-ordered,
+.list-title-unordered {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.ordered-list ol,
+.lecture .ordered-list {
+  list-style-type: decimal;
+}
+
+.unordered-list ul,
+.lecture .unordered-list {
+  list-style-type: disc;
+}
+
+/* 練習問題セクション */
+.practice {
+  background: #fff;
+  border: 2px solid #007ACC;
+  border-radius: 4px;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+.practice .content {
+  background: #f9f9f9;
+  border-left: 4px solid #007ACC;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 4px;
+}
+
+/* プロンプトエリア */
+.prompt-instruction {
+  font-style: italic;
+  margin-bottom: 0.8em;
+}
+
+.prompt-container {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.prompt-header {
+  background: #007ACC;
+  color: #fff;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prompt-title {
+  font-weight: bold;
+}
+
+.copy-button {
+  background: #005999;
+  border: none;
+  color: #fff;
+  padding: 0.3em 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.copy-button:hover {
+  background: #004377;
+}
+
+.copy-icon {
+  margin-right: 0.3em;
+}
+
+.prompt-content {
+  background: #fafafa;
+  font-family: monospace;
+  font-size: 0.9em;
+  overflow-x: auto;
+  padding: 1em;
+  margin: 0;
+}
+
+/* アコーディオン */
+.accordion {
+  margin-top: 1.5em;
+}
+
+.accordion-toggle {
+  background: #007ACC;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.accordion-toggle:hover {
+  background: #005999;
+}
+
+.accordion-content {
+  display: none; /* JavaScriptで表示切替 */
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 1em;
+}
+
+.accordion-content .answer {
+  margin-top: 1em;
+}
+
+/* 用語説明 */
+.terminology {
+  background: #fff;
+  border: 2px solid #007ACC;
+  padding: 1em;
+  border-radius: 4px;
+  margin: 2em 0;
+}
+
+.terminology dl {
+  margin: 0;
+}
+
+.terminology dt {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.terminology dd {
+  margin: 0.5em 0 1em 1em;
+}
+
+/* まとめセクション */
+.lecture-summary {
+  background: #e6f2fa;
+  padding: 1.5em;
+  border-radius: 4px;
+  margin-top: 2em;
+}
+
+.lecture-summary p {
+  margin: 1em 0;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 600px) {
+  article.lecture {
+    padding: 1em;
+  }
+
+  .pdf-container iframe {
+    height: 300px;
+  }
+
+  .prompt-content {
+    font-size: 0.8em;
+  }
+}
+
+  </style>
+</head>
+
+
+
+<div class="pdf-container">
+    <iframe src="https://drive.google.com/file/d/1KPDfLU1OeZzXJKQwM6q4GPMPbFLtP8K3/preview" allowfullscreen></iframe>
+  </div>
+
+
+<article class="lecture">
+  <h1>Difyとは何か</h1>
+  
+  <div class="lecture-overview">
+    <p>この講義では、マーケティングの新たな可能性を開くAIツール「Dify」について学びます。<br>Difyの基本的な特徴から実践的な活用方法まで、ビジネスパーソンの視点で分かりやすく解説していきます。</p>
+  </div>
+
+  <section class="lecture-section">
+    <h2>Difyの概要と特徴</h2>
+    <div class="content">
+      <p>みなさん、最近「AI」という言葉をよく耳にしませんか？<br>特に、ChatGPTの登場以降、ビジネスの現場でもAIの活用が急速に広がっています。<br>今回ご紹介する「Dify」は、そんなAIの力をより簡単に、より効果的にビジネスに活用できる画期的なツールなんです。</p>
+
+      <p>Difyは、<span class="term">LLMOps</span>（大規模言語モデル運用）プラットフォームです。<br>つまり、ChatGPTのような高度なAI機能を、専門的な知識がなくても簡単に自社のサービスに組み込めるツールということです。</p>
+
+      <h3>Difyの主要な特徴</h3>
+      <ol class="ordered-list">
+        <h3 class="list-title-ordered">Difyが提供する3つの強み</h3>
+        <li><p>ノーコードでAIアプリケーションが作成可能：プログラミングの知識がなくても、直感的な操作でAIチャットボットやアシスタントを作れます。</p></li>
+        <li><p>柔軟なカスタマイズ性：業界や目的に応じて、AIの応答内容や対話の流れを細かく設定できます。</p></li>
+        <li><p>データの安全性：自社のデータを安全に管理しながら、AIの学習に活用することができます。</p></li>
+      </ol>
+
+      <p>特に注目したいのが、Difyの使いやすさです。<br>従来のAIツールでは、技術者の支援が必要だったような機能も、Difyならマーケティング担当者が直接操作できるんです。</p>
+
+      <h3>Difyのアーキテクチャ</h3>
+      <p>Difyは、フロントエンド（対話インターフェース）とバックエンド（AI処理エンジン）が統合された形で提供されます。<br>これにより、システム構築の手間を大幅に削減できるんです。</p>
+    </div>
+  </section>
+
+  <section class="lecture-section">
+    <h2>マーケティングでの活用メリット</h2>
+    <div class="content">
+      <p>では、Difyはマーケティングの現場でどのように役立つのでしょうか？<br>具体的なメリットを見ていきましょう。</p>
+
+      <ul class="unordered-list">
+        <h3 class="list-title-unordered">マーケティングにおける4つの活用ポイント</h3>
+        <li><p>24時間365日の顧客対応：AIチャットボットが常時対応することで、潜在顧客の取りこぼしを防ぎます。</p></li>
+        <li><p>パーソナライズされた顧客体験：顧客データに基づいて、一人一人に最適化された対話を実現します。</p></li>
+        <li><p>リアルタイムの市場分析：顧客との対話データをリアルタイムで分析し、トレンドを把握できます。</p></li>
+        <li><p>コスト効率の向上：反復的な業務をAIが担当することで、人的リソースを戦略的な業務に集中できます。</p></li>
+      </ul>
+
+      <p>特に注目したいのが、<span class="term">カスタマージャーニー</span>全体をサポートできる点です。<br>認知段階から購買後のフォローまで、一貫したAI支援が可能になります。</p>
+
+      <p>例えば、こんな活用方法があります：</p>
+      <ol class="ordered-list">
+        <h3 class="list-title-ordered">具体的な活用例</h3>
+        <li><p>リード獲得の自動化：ウェブサイト訪問者との対話を通じて、有望な見込み客を自動で特定します。</p></li>
+        <li><p>商品レコメンデーション：顧客の質問や要望に基づいて、最適な商品を提案します。</p></li>
+        <li><p>カスタマーサポート：よくある質問への回答を自動化し、サポート品質を向上させます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="practice">
+    <h2>練習問題: Difyをセットアップしよう！</h2>
+    <div class="content">
+      <h3>問題文</h3>
+      <p>自社のマーケティング活動を想定して、Difyの初期セットアップを行ってみましょう。<br>以下のステップで、基本的なAIアシスタントを作成してください：</p>
+      <ol>
+        <li>Difyのアカウント作成</li>
+        <li>新規プロジェクトの作成</li>
+        <li>基本的な応答設定の構成</li>
+      </ol>
+
+      <h3>補助プロンプト</h3>
+      <p class="prompt-instruction">以下の補助プロンプトを使用して、AIと一緒に練習問題に取り組むことができます。</p>
+      
+      <div class="prompt-container">
+        <div class="prompt-header">
+          <span class="prompt-title">補助プロンプト</span>
+          <button class="copy-button" onclick="copyPrompt(this)" data-prompt-target="prompt-1">
+            <span class="copy-icon">📋</span>
+            <span class="copy-text">コピー</span>
+          </button>
+        </div>
+        <pre class="prompt-content" id="prompt-1"><code>あなたは私のDifyセットアップアドバイザーです。
+以下の手順で、Difyの初期セットアップをサポートしてください：
+
+1. アカウント作成のベストプラクティス
+2. 新規プロジェクト作成時の重要な設定項目
+3. 基本的な応答設定の推奨パターン
+
+各ステップについて、具体的なアドバイスと注意点を教えてください。
+また、以下の情報も考慮してアドバイスをお願いします：
+
+- 業界：[あなたの業界]
+- 主な用途：[想定する使用目的]
+- ターゲット顧客：[想定する顧客層]</code></pre>
+        </div>
+      
+      <h3>解答/解答例</h3>
+      <div class="accordion">
+        <button class="accordion-toggle">解答/解答例を表示</button>
+        <div class="accordion-content">
+          <div class="answer">
+            <h4>1. アカウント作成</h4>
+            <p>1. dify.ai にアクセスし、「Sign Up」をクリック<br>
+            2. メールアドレスとパスワードを設定（企業メールの使用を推奨）<br>
+            3. 利用規約を確認し、アカウントを作成</p>
+
+            <h4>2. 新規プロジェクト作成</h4>
+            <p>1. ダッシュボードから「Create New Project」を選択<br>
+            2. プロジェクト名を設定（例：Company_Marketing_Assistant）<br>
+            3. 使用するAIモデルを選択（初期設定ではGPT-3.5を推奨）</p>
+
+            <h4>3. 基本的な応答設定</h4>
+            <p>1. プロンプトテンプレートの設定：<br>
+            - 自社の商品やサービスの基本情報を入力<br>
+            - 応答トーンや話し方の設定<br>
+            2. 基本的な質問と回答のペアを準備：<br>
+            - よくある質問（FAQ）の登録<br>
+            - 商品説明の基本フォーマット設定</p>
+
+            <p>セットアップ後は、実際に対話テストを行い、応答の自然さや正確性を確認することが重要です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="terminology">
+    <h2>用語説明</h2>
+    <dl>
+      <dt>LLMOps</dt>
+      <dd><p>Large Language Model Operations の略。大規模言語モデルの効率的な運用と管理を行うための実践的なアプローチや手法を指します。</p></dd>
+      <dt>カスタマージャーニー</dt>
+      <dd><p>顧客が商品やサービスを認知してから購入し、その後の利用に至るまでの一連の行動プロセス。顧客体験の全体像を把握するための重要な概念です。</p></dd>
+    </dl>
+  </section>
+
+  <section class="lecture-summary">
+    <h2>まとめと次のステップ</h2>
+    <p>この講義では、Difyの基本的な特徴と、マーケティングにおける活用可能性について学びました。<br>特に、ノーコードでの実装や柔軟なカスタマイズ性が、ビジネス現場での大きな強みとなることを理解できたと思います。</p>
+    <p>次の講義では、Difyを使った具体的なリード獲得システムの構築方法について学んでいきます。<br>実践的なスキルを身につけながら、効果的なマーケティング施策を展開できるようになりましょう。</p>
+  </section>
+</article>
+

@@ -1,0 +1,461 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学習用ページ</title>
+  <style>
+    /* 全体のスタイル */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+article.lecture {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* タイトル、見出しスタイル */
+article.lecture h1,
+article.lecture h2,
+article.lecture h3,
+article.lecture h4 {
+  margin: 1em 0 0.5em;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+article.lecture h1 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.4em;
+  margin-bottom: 0.8em;
+}
+
+article.lecture h2 {
+  font-size: 1.6em;
+  border-left: 4px solid #42a5f5;
+  padding-left: 0.5em;
+  margin-top: 2em;
+}
+
+article.lecture h3 {
+  font-size: 1.3em;
+  color: #555;
+  margin-top: 1.5em;
+}
+
+article.lecture h4 {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* テキスト、段落 */
+article.lecture p {
+  margin-bottom: 1em;
+}
+
+/* リスト */
+ol.ordered-list,
+ul.unordered-list {
+  margin: 1em 0 1em 1.5em;
+  padding: 0;
+}
+
+ol.ordered-list li,
+ul.unordered-list li {
+  margin-bottom: 0.5em;
+}
+
+.list-title-ordered,
+.list-title-unordered {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.term {
+  font-weight: bold;
+  background-color: #e7f4ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+/* コンテナ、セクション */
+.lecture-overview {
+  background: #f0f8ff;
+  border-left: 4px solid #42a5f5;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 4px;
+}
+
+.lecture-section .content,
+.practice .content {
+  margin-top: 1em;
+  padding-left: 0.5em;
+  border-left: 4px solid #ddd;
+}
+
+.practice {
+  margin-top: 2em;
+  background: #fffdfa;
+  border: 1px solid #ffe9c0;
+  padding: 1.5em;
+  border-radius: 4px;
+}
+
+.prompt-instruction {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* プロンプトコンテナ */
+.prompt-container {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1em 0;
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0e0e0;
+  padding: 0.5em 1em;
+}
+
+.prompt-title {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.copy-button {
+  background: #42a5f5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 3px;
+  padding: 0.3em 0.6em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.copy-button .copy-icon {
+  margin-right: 0.3em;
+}
+
+.copy-button:hover {
+  background: #1e88e5;
+}
+
+.prompt-content {
+  background: #fff;
+  margin: 0;
+  padding: 1em;
+  font-size: 0.9em;
+  overflow: auto;
+  max-height: 300px;
+}
+
+/* アコーディオン */
+.accordion {
+  margin-top: 1em;
+}
+
+.accordion-toggle {
+  background: #42a5f5;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  font-size: 1em;
+  text-align: left;
+}
+
+.accordion-toggle:hover {
+  background: #1e88e5;
+}
+
+.accordion-content {
+  display: none;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.accordion-content .answer h4 {
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+
+/* 用語集 */
+.terminology dl {
+  margin: 1em 0;
+  border-top: 1px solid #eee;
+}
+
+.terminology dt {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.terminology dd {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+/* PDFコンテナ */
+.pdf-container {
+  max-width: 960px;
+  margin: 2em auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+/* まとめ */
+.lecture-summary {
+  background: #f0f8ff;
+  border-left: 4px solid #42a5f5;
+  padding: 1em;
+  margin-top: 2em;
+  border-radius: 4px;
+}
+
+/* 小画面対応 */
+@media screen and (max-width: 600px) {
+  article.lecture {
+    padding: 20px 10px;
+  }
+  
+  .prompt-content {
+    max-height: 200px;
+  }
+  
+  .pdf-container iframe {
+    height: 400px;
+  }
+}
+
+/* アコーディオン動作用：JS側でtoggleする例
+   初期表示時はdisplay:none。toggle後に以下のクラスを付与して表示する想定。 */
+.accordion-content.is-open {
+  display: block;
+}
+
+  </style>
+</head>
+
+
+
+
+<div class="pdf-container">
+  <iframe src="https://drive.google.com/file/d/1U1uEt7mJjCydEKCJpSaSesx4Wl-rTb4k/preview" allowfullscreen></iframe>
+</div>
+
+<article class="lecture">
+  <h1>Difyによる顧客理解</h1>
+  
+  <div class="lecture-overview">
+    <p>この講義では、Difyを活用した顧客データの収集・分析方法と、そこから得られるインサイトの抽出方法について学びます。<br>実践的なデータ分析手法を通じて、より効果的な顧客理解を目指します。</p>
+  </div>
+
+  <section class="lecture-section">
+    <h2>顧客データの収集と分析</h2>
+    <div class="content">
+      <p>皆さん、「顧客の声を理解したい」と思ったことはありませんか？<br>実は、Difyを使えば、AIチャットボットとの対話を通じて、貴重な顧客インサイトを自動的に収集できるんです。</p>
+
+      <h3>データ収集の基本戦略</h3>
+      <p>効果的なデータ収集には、明確な目的と戦略が必要です。<br>以下の要素を考慮しながら、データ収集の仕組みを設計していきましょう：</p>
+
+      <ol class="ordered-list">
+        <h3 class="list-title-ordered">データ収集の4つの重要ポイント</h3>
+        <li><p>定性データ：顧客との対話内容、感情、要望など</p></li>
+        <li><p>定量データ：対話頻度、反応時間、コンバージョン率など</p></li>
+        <li><p>行動データ：ナビゲーションパターン、クリック履歴など</p></li>
+        <li><p>コンテキストデータ：時間帯、デバイス、参照元など</p></li>
+      </ol>
+
+      <p>特に注目したいのが、<span class="term">センチメント分析</span>です。<br>Difyは、顧客との対話から感情や態度を自動的に分析し、より深い顧客理解を可能にします。</p>
+
+      <h3>データ収集の実践的アプローチ</h3>
+      <p>Difyでのデータ収集は、以下の手順で進めていきます：</p>
+
+      <ul class="unordered-list">
+        <h3 class="list-title-unordered">データ収集の実施手順</h3>
+        <li><p>対話トリガーの設定：特定のキーワードや行動パターンに基づく情報収集</p></li>
+        <li><p>データ構造の定義：収集する情報の種類と形式の standardization</p></li>
+        <li><p>プライバシー設定：個人情報の適切な取り扱いと保護</p></li>
+        <li><p>データ統合：既存の CRM システムとの連携</p></li>
+      </ul>
+
+      <p>ここで重要なのが、<span class="term">データクレンジング</span>です。<br>収集したデータの品質を維持し、正確な分析を可能にするための重要なプロセスとなります。</p>
+    </div>
+  </section>
+
+  <section class="lecture-section">
+    <h2>インサイト抽出の方法</h2>
+    <div class="content">
+      <p>収集したデータから、実際にビジネスに活用できるインサイトを抽出していきましょう。<br>Difyには、強力なデータ分析機能が備わっています。</p>
+
+      <h3>インサイト抽出のプロセス</h3>
+      <p>効果的なインサイト抽出には、以下のステップが必要です：</p>
+
+      <ol class="ordered-list">
+        <h3 class="list-title-ordered">インサイト抽出の5つのステップ</h3>
+        <li><p>データの前処理：ノイズの除去とデータの正規化</p></li>
+        <li><p>パターン分析：頻出するトピックや傾向の特定</p></li>
+        <li><p>相関分析：異なるデータポイント間の関連性の発見</p></li>
+        <li><p>セグメント分析：顧客グループごとの特徴抽出</p></li>
+        <li><p>予測モデリング：将来のトレンドや行動の予測</p></li>
+      </ol>
+
+      <h3>実践的な分析テクニック</h3>
+      <p>Difyを使用した具体的な分析手法を見ていきましょう：</p>
+
+      <ul class="unordered-list">
+        <h3 class="list-title-unordered">分析テクニックの活用方法</h3>
+        <li><p>テキストマイニング：対話内容からキーワードやトピックを抽出</p></li>
+        <li><p>感情分析：顧客の感情状態や満足度を数値化</p></li>
+        <li><p>クラスター分析：類似した特徴を持つ顧客グループの特定</p></li>
+        <li><p>トレンド分析：時系列データからの変化パターンの把握</p></li>
+      </ul>
+
+      <p><span class="term">アクショナブル・インサイト</span>の抽出が特に重要です。<br>単なる発見ではなく、具体的なアクションにつながるインサイトを見出すことを意識しましょう。</p>
+    </div>
+  </section>
+
+  <section class="practice">
+    <h2>練習問題: 顧客データから傾向を見つけよう！</h2>
+    <div class="content">
+      <h3>問題文</h3>
+      <p>あなたの会社のDifyチャットボットで収集した顧客データを分析し、重要なインサイトを見つけ出す演習を行います。<br>以下の手順で分析を進めてください：</p>
+      <ol>
+        <li>データの整理と分類</li>
+        <li>主要な傾向の特定</li>
+        <li>アクションプランの作成</li>
+      </ol>
+
+      <h3>補助プロンプト</h3>
+      <p class="prompt-instruction">以下の補助プロンプトを使用して、AIと一緒に練習問題に取り組むことができます。</p>
+      
+      <div class="prompt-container">
+        <div class="prompt-header">
+          <span class="prompt-title">補助プロンプト</span>
+          <button class="copy-button" onclick="copyPrompt(this)" data-prompt-target="prompt-1">
+            <span class="copy-icon">📋</span>
+            <span class="copy-text">コピー</span>
+          </button>
+        </div>
+        <pre class="prompt-content" id="prompt-1"><code>あなたは私の顧客データ分析アドバイザーです。
+以下のような顧客データの分析をサポートしてください：
+
+分析対象データ：
+[分析したい顧客データの種類や期間を記入]
+
+分析の目的：
+[データ分析を通じて明らかにしたいことを記入]
+
+以下の観点で分析を行ってください：
+
+1. データの整理と分類
+- データの種類ごとの分類方法
+- 重要な指標の特定
+- データクレンジングのポイント
+
+2. 傾向分析
+- 主要なパターンの特定
+- 異常値や特異な傾向の検出
+- 時系列での変化の把握
+
+3. インサイトの抽出
+- 重要な発見事項の整理
+- ビジネスインパクトの評価
+- 具体的なアクションプランの提案
+
+また、以下の点についても具体的なアドバイスをお願いします：
+- 効果的なデータ可視化の方法
+- 分析結果の解釈のポイント
+- 実務での活用方法</code></pre>
+      </div>
+      
+      <h3>解答/解答例</h3>
+      <div class="accordion">
+        <button class="accordion-toggle">解答/解答例を表示</button>
+        <div class="accordion-content">
+          <div class="answer">
+            <h4>分析の進め方例</h4>
+            <p>以下は、Eコマースサイトを想定した分析例です：</p>
+
+            <h4>1. データの整理と分類</h4>
+            <p>収集データの分類：</p>
+            <ul>
+              <li>対話データ：商品問い合わせ、カスタマーサポート内容</li>
+              <li>行動データ：閲覧商品、カート追加、購買履歴</li>
+              <li>時間帯データ：アクセス時間、購買時間帯</li>
+            </ul>
+
+            <h4>2. 主要な傾向の特定</h4>
+            <p>パターン分析：</p>
+            <ul>
+              <li>最も多い問い合わせ内容のカテゴリー化</li>
+              <li>購買につながった対話パターンの特定</li>
+              <li>時間帯別の顧客行動の違い</li>
+            </ul>
+
+            <h4>3. アクションプラン作成</h4>
+            <p>発見事項に基づく施策例：</p>
+            <ul>
+              <li>よくある質問のAI回答の改善</li>
+              <li>時間帯に応じた商品レコメンデーションの調整</li>
+              <li>カスタマーサポートの強化ポイントの特定</li>
+            </ul>
+
+            <p>このような分析を定期的に実施し、継続的な改善につなげることが重要です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="terminology">
+    <h2>用語説明</h2>
+    <dl>
+      <dt>センチメント分析</dt>
+      <dd><p>テキストデータから感情や態度を分析する手法。顧客の本質的なニーズや不満を理解するのに役立ちます。</p></dd>
+      <dt>データクレンジング</dt>
+      <dd><p>収集したデータから誤りやノイズを除去し、分析に適した形に整理する作業。正確な分析結果を得るために重要です。</p></dd>
+      <dt>アクショナブル・インサイト</dt>
+      <dd><p>具体的なアクションや施策に直接結びつく洞察。ビジネス改善に即座に活用できる発見事項を指します。</p></dd>
+    </dl>
+  </section>
+
+  <section class="lecture-summary">
+    <h2>まとめと次のステップ</h2>
+    <p>この講義では、Difyを使った顧客データの収集・分析方法と、実践的なインサイト抽出の手法について学びました。<br>特に、データの質を保ちながら、実用的なインサイトを導き出す重要性について理解を深めることができました。</p>
+    <p>次の講義では、これらのインサイトを活用した効果的な自動メッセージング戦略について学んでいきます。<br>データに基づいた、より精度の高いコミュニケーション設計を目指しましょう。</p>
+  </section>
+</article>
+
